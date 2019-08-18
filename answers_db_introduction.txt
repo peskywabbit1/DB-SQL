@@ -1,0 +1,150 @@
+EXERCISES:
+
+
+1. What data types do each of these values represent?
+
+"A Clockwork Orange" = String
+42 = integer
+09/02/1945 = Date
+98.7 = float
+$15.99 = currency 
+
+2. Explain when a database would be used. Explain when a text file would be used.
+A database would be used when there is a large amount of data with information on objects. When we need a way to store data and a way to make it easy to search for specific data, that can handle multiple applications accessing the data, and that persists beyond the end of a particular application process, we would use database.  This data needs to be quickly accessed, and changeable. 
+
+A text file would be used when there is a small amount of data that would not be updated often and needs to be readable.  
+
+
+3. Describe one difference between SQL and other programming languages.
+
+SQL is a declarative rather than a procedural language.  This means we don't need to create an algorithm on how to search the database.  Instead we tell the database what we are looking for and the database engine performs the most efficient way to return the data.   Also, unlike many programming languages, SQL uses a single = symbol for equality instead of ==. The syntax for strings in SQL is single quotation marks rather than double quotation. 
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+
+It is easy to use in the sense that you use basic words to declare your search in the database table.
+
+SELECT - We select the names of certain columns that we want the data from on the table, or if all columns we use SELECT *
+
+FROM - The name of the table
+
+WHERE - input specific column name = cell data to narrow search.
+
+Because it's a fairly straight forward logic for the user to implement, it is a high level language.  
+
+
+5. Explain the meaning of table, row, column, and value.
+Tables are structures that hold a collection of related data.
+Columns define the representational data.
+The rows are collections of a conceptual unit.
+Value is what is contained in a cell.
+
+6. List three data types that can be used in a table.
+
+a) Strings
+b) numbers
+c) dates
+
+
+7. Given this payments table, provide an English description of the following queries and include their results:
+
+
+TABLE:
+PAYMENTS
+
+|	ITEM		|	DATE		|	AMOUNT	|	PAYEE		|
+-----------------------------------------------------------------------------------------
+|	'hamburger'	|	05/30/2019	|	$6.99	|	'Mega Foods'	|
+-----------------------------------------------------------------------------------------
+|	'dress'		|	06/05/2019	|	$580.95	|	'Macys'		|
+-----------------------------------------------------------------------------------------
+|	'book'		|	07/21/2019	|	$24.00	|	'Target'	|
+-----------------------------------------------------------------------------------------
+
+
+
+a)   SELECT date, amount
+     FROM payments;
+
+This query selects the dates and the amounts that correspond to each other on the payments table.  
+
+PAYMENTS
+
+|	DATE		|	AMOUNT	|
+-----------------------------------------
+|	05/30/2019	|	$6.99	|
+-----------------------------------------
+|	06/05/2019	|	$580.95	|
+-----------------------------------------
+|	07/21/2019	|	$24.00	|
+
+
+
+
+b)	SELECT amount
+	FROM payments
+	WHERE amount > 500;
+
+This query asks for amounts that are greater than $500
+
+PAYMENTS 
+
+|	AMOUNT	|
+------------------
+|	$580.95	|	
+
+
+
+c)	SELECT *
+     	FROM payments
+     	WHERE payee = 'Mega Foods';
+
+
+This query selects all columns where the Payee is 'Mega Foods'.
+
+
+|	ITEM		|	DATE		|	AMOUNT	|	PAYEE		|
+-----------------------------------------------------------------------------------------
+|	'hamburger'	|	05/30/2019	|	$6.99	|	'Mega Foods'	|
+-----------------------------------------------------------------------------------------
+
+
+
+8. Given this users table, write SQL queries using the following criteria and include the output:
+
+a) 	The email and sign-up date for the user named DeAndre Data.
+SELECT 	email, sign-up date
+FROM 	users
+WHERE 	user id = 'DeAndre Data';
+
+output:
+
+|	email			|	signup		|
+---------------------------------------------------------
+|	datad@comcast.net	|	2008-01-20	|
+
+
+
+b)	The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+SELECT	user id
+FROM	users
+WHERE	email = 'aleesia.algorithm@uw.edu';
+
+ouput:
+|	userid		|	
+-------------------------
+|	1		|
+
+
+c)	All the columns for the user ID equal to 4.
+
+SELECT	*
+FROM	users
+WHERE	user ID = 4;
+
+output:
+|	userid	|	name		|	email		 |	signup		|
+-----------------------------------------------------------------------------------------
+|	4	|	Brandy Boolean	|	bboolean@nasa.gov|	1999-10-15	|
+-----------------------------------------------------------------------------------------
+
+
