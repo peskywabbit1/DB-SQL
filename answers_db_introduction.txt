@@ -112,39 +112,42 @@ This query selects all columns where the Payee is 'Mega Foods'.
 8. Given this users table, write SQL queries using the following criteria and include the output:
 
 a) 	The email and sign-up date for the user named DeAndre Data.
-SELECT 	email, sign-up date
-FROM 	users
-WHERE 	user id = 'DeAndre Data';
 
 output:
+    SELECT 	email, signup
+    FROM 	users
+    WHERE 	userid = 2;
 
-|	email			|	signup		|
----------------------------------------------------------
-|	datad@comcast.net	|	2008-01-20	|
+| email             | signup                   |
+| ----------------- | ------------------------ |
+| datad@comcast.net | 2008-01-20T00:00:00.000Z |
+
+---
 
 
 
 b)	The user ID for the user with email 'aleesia.algorithm@uw.edu'.
-SELECT	user id
+
+SELECT	userid
 FROM	users
 WHERE	email = 'aleesia.algorithm@uw.edu';
 
-ouput:
-|	userid		|	
--------------------------
-|	1		|
+
+| userid |
+| ------ |
+| 1      |
+
+---
+
+c)	All the columns for the userid equal to 4.
 
 
-c)	All the columns for the user ID equal to 4.
+    SELECT	*
+    FROM	users
+    WHERE	userid = 4;
 
-SELECT	*
-FROM	users
-WHERE	user ID = 4;
+| userid | name           | email             | signup                   |
+| ------ | -------------- | ----------------- | ------------------------ |
+| 4      | Brandy Boolean | bboolean@nasa.gov | 1999-10-15T00:00:00.000Z |
 
-output:
-|	userid	|	name		|	email		 |	signup		|
------------------------------------------------------------------------------------------
-|	4	|	Brandy Boolean	|	bboolean@nasa.gov|	1999-10-15	|
------------------------------------------------------------------------------------------
-
-
+---
